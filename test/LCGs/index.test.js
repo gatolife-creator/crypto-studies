@@ -1,4 +1,4 @@
-import { randomMinToMax } from "../../LCGs/index.mjs";
+import { randomMinToMax } from "../../src/LCGs/index.mjs";
 
 const randomValues = [];
 

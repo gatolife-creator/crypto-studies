@@ -1,5 +1,5 @@
 import Decimal from "decimal.js";
-import { enc, dec } from "../../rsa/index.mjs";
+import { enc, dec } from "../../src/rsa/index.mjs";
 
 const m = new Decimal(114514);
 console.log(`平文: ${m.toString()}`);

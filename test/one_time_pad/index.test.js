@@ -1,4 +1,4 @@
-import { enc, dec } from "../../one_time_pad/index.mjs";
+import { enc, dec } from "../../src/one_time_pad/index.mjs";
 
 const m = BigInt("123456789123456789123456789123456789123456789123456789");
 const [c, s] = enc(m);
