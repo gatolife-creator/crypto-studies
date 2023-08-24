@@ -10,6 +10,6 @@ export function random() {
   return x / M;
 }
 
-export function randomMinToMax(min, max) {
+export function randomMinToMax(min: number, max: number) {
   return random() * (max - min) + min;
 }

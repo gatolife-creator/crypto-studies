@@ -1,23 +1,10 @@
 import Decimal from "decimal.js";
 
-/**
- *
- * @param {Decimal} e
- * @param {Decimal} l
- * @returns
- */
-
-export function gcd(e, l) {
+export function gcd(e: Decimal, l: Decimal): Decimal {
   return e.isZero() ? l : gcd(l.mod(e), e);
 }
 
-/**
- *
- * @param {Decimal} a
- * @param {Decimal} b
- * @returns {[Decimal, Decimal, Decimal]}
- */
-export function extGCD(a, b) {
+export function extGCD(a: Decimal, b: Decimal): [Decimal, Decimal, Decimal] {
   let x = new Decimal(1);
   let y = new Decimal(0);
   if (b.isZero()) {
@@ -29,6 +16,6 @@ export function extGCD(a, b) {
   return [d, x, y];
 }
 
-export function random(min, max) {
+export function random(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
