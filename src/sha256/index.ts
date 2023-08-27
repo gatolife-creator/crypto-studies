@@ -23,14 +23,16 @@ export function padding(msg: number[]) {
   let len = msg.length;
   let tmp: number[] = Array(64);
   tmp.fill(0);
-  tmp[0] = 0x80; // 1 byte = 8 bit = 256通り = 16^2
+  tmp[0] = 0x80; // 1 byte = 8 bits = 256通り = 16^2
   let bs = msg.concat(); // bsは元のメッセージと余分なデータを結合したもの
   if (len % 64 < 56) {
+    // 56 = 64 - 8
     bs = bs.concat(tmp.slice(0, 56 - (len % 64)));
   } else {
     bs = bs.concat(tmp.slice(0, 64 + 56 - (len % 64)));
   }
-  let bits = len * 8;
+  let bits = len * 8; // 1 byte = 8 bits
+  // REVIEW 以下何してるかよくわからん
   let size = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00];
   size[4] = (bits & 0xff000000) >> 24;
   size[5] = (bits & 0x00ff0000) >> 16;
